@@ -1,0 +1,14 @@
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\bin\Debug\TMS_Front_nd.exe
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\bin\Debug\TMS_Front_nd.pdb
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.csproj.AssemblyReference.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\MainWindow.g.cs
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\App.g.cs
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd_MarkupCompile.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd_MarkupCompile.lref
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\MainWindow.baml
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.g.resources
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.Properties.Resources.resources
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.csproj.GenerateResource.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.csproj.CoreCompileInputs.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.exe
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.pdb
