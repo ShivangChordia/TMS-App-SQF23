@@ -1,0 +1,60 @@
+﻿<Page x:Class="TMS_Front_nd.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TMS_Front_nd"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Admin">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- General Configuration Section -->
+        <GroupBox Header="General Configuration" Margin="10">
+            <StackPanel>
+                <TextBlock Text="Log File Directory:" />
+                <TextBox Name="LogFileDirectoryTextBox" Width="200" Margin="0,0,0,10" />
+
+                <TextBlock Text="DBMS IP Address:" />
+                <TextBox Name="DbmsIpAddressTextBox" Width="200" Margin="0,0,0,10" />
+
+                <TextBlock Text="DBMS Port:" />
+                <TextBox Name="DbmsPortTextBox" Width="200" />
+            </StackPanel>
+        </GroupBox>
+
+
+        <!-- Log File Review Section -->
+        <GroupBox Header="Log File Review" Margin="10" Grid.Row="1">
+            <Button Content="Review Log Files" Width="120" Margin="0,0,0,10" />
+        </GroupBox>
+
+
+        <!-- TMS Data Management Section -->
+        <GroupBox Header="TMS Data Management" Margin="10" Grid.Row="2">
+            <StackPanel>
+                <Button Content="Manage Rate/Fee Tables" Width="180" Margin="0,0,0,5" />
+                <Button Content="Manage Carrier Data" Width="180" Margin="0,0,0,5" />
+                <Button Content="Manage Route Table" Width="180" Margin="0,0,0,5" />
+            </StackPanel>
+        </GroupBox>
+
+
+        <!-- Database Backup Section -->
+        <GroupBox Header="Database Backup" Margin="10" Grid.Row="3">
+            <StackPanel>
+                <TextBlock Text="Backup Directory:" />
+                <TextBox Name="BackupDirectoryTextBox" Width="200" Margin="0,0,0,10" />
+
+                <Button Content="Initiate Backup" Width="120" />
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Page>

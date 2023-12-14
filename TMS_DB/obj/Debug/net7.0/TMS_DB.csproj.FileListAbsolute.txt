@@ -1,0 +1,14 @@
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\bin\Debug\net7.0\TMS_DB.deps.json
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\bin\Debug\net7.0\TMS_DB.runtimeconfig.json
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\bin\Debug\net7.0\TMS_DB.dll
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\bin\Debug\net7.0\TMS_DB.pdb
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.csproj.AssemblyReference.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.GeneratedMSBuildEditorConfig.editorconfig
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.AssemblyInfoInputs.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.AssemblyInfo.cs
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.csproj.CoreCompileInputs.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.dll
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\refint\TMS_DB.dll
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.pdb
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\TMS_DB.genruntimeconfig.cache
+D:\SQ\TMS\TMS-App-SQF23\TMS_DB\obj\Debug\net7.0\ref\TMS_DB.dll
