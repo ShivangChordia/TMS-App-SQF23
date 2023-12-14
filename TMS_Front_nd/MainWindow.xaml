@@ -6,53 +6,26 @@
         xmlns:local="clr-namespace:TMS_Front_nd"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="800">
-    <Grid>
+    <Grid Background="#f0f0f0">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- General Configuration Section -->
-        <GroupBox Header="General Configuration" Margin="10">
-            <StackPanel>
-                <TextBlock Text="Log File Directory:" />
-                <TextBox Name="LogFileDirectoryTextBox" Width="200" Margin="0,0,0,10" />
+        <TextBlock Text="Welcome! to TMS" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,10"/>
 
-                <TextBlock Text="DBMS IP Address:" />
-                <TextBox Name="DbmsIpAddressTextBox" Width="200" Margin="0,0,0,10" />
+        <StackPanel Grid.Row="1" Margin="20">
+            <TextBlock Text="Username" FontWeight="Bold"/>
+            <TextBox x:Name="usernameTextBox" Margin="0,5,0,10" Padding="8" BorderBrush="#999" BorderThickness="1"/>
+            <TextBlock Text="Password" FontWeight="Bold"/>
+            <PasswordBox x:Name="passwordBox" Margin="0,5,0,20" Padding="8" BorderBrush="#999" BorderThickness="1"/>
+            <Button Content="Login" Padding="10" Background="#007acc" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        </StackPanel>
 
-                <TextBlock Text="DBMS Port:" />
-                <TextBox Name="DbmsPortTextBox" Width="200" />
-            </StackPanel>
-        </GroupBox>
+        <TextBlock x:Name="loginStatus" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontWeight="Bold" Margin="0,20" TextWrapping="Wrap"/>
         
-
-        <!-- Log File Review Section -->
-        <GroupBox Header="Log File Review" Margin="10" Grid.Row="1">
-            <Button Content="Review Log Files" Width="120" Margin="0,0,0,10" />
-        </GroupBox>
-        
-
-        <!-- TMS Data Management Section -->
-        <GroupBox Header="TMS Data Management" Margin="10" Grid.Row="2">
-            <StackPanel>
-                <Button Content="Manage Rate/Fee Tables" Width="180" Margin="0,0,0,5" />
-                <Button Content="Manage Carrier Data" Width="180" Margin="0,0,0,5" />
-                <Button Content="Manage Route Table" Width="180" Margin="0,0,0,5" />
-            </StackPanel>
-        </GroupBox>
-        
-
-        <!-- Database Backup Section -->
-        <GroupBox Header="Database Backup" Margin="10" Grid.Row="3">
-            <StackPanel>
-                <TextBlock Text="Backup Directory:" />
-                <TextBox Name="BackupDirectoryTextBox" Width="200" Margin="0,0,0,10" />
-
-                <Button Content="Initiate Backup" Width="120" />
-            </StackPanel>
-        </GroupBox>
     </Grid>
 </Window>

@@ -12,3 +12,5 @@ D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.csproj.GenerateResou
 D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.csproj.CoreCompileInputs.cache
 D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.exe
 D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\TMS_Front_nd.pdb
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\Admin.g.cs
+D:\SQ\TMS\TMS-App-SQF23\TMS_Front_nd\obj\Debug\Admin.baml
