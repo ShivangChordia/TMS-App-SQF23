@@ -8,6 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminPage">
 
+    <ScrollViewer  VerticalScrollBarVisibility="Auto" >
+       
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,15 +19,7 @@
         </Grid.RowDefinitions>
 
         <!-- General Configuration Section -->
-        <GroupBox Header="General Configuration" Margin="10">
-            <StackPanel>
-                <TextBlock Text="DBMS IP Address:" />
-                <TextBox Name="DbmsIpAddressTextBox" Width="200" Margin="0,0,0,10" />
-
-                <TextBlock Text="DBMS Port:" />
-                <TextBox Name="DbmsPortTextBox" Width="200" />
-            </StackPanel>
-        </GroupBox>
+        
 
         <!-- Log File Review Section -->
         <GroupBox Header="Log File Review" Margin="10" Grid.Row="1">
@@ -35,19 +29,23 @@
 
                 <Button x:Name="PrintLogFilesButton" Click="PrintLogFilesButton_Click" Content="Review Log Files" Width="120" Margin="0,0,0,10" />
                 <DataGrid x:Name="LogFileGrid" AutoGenerateColumns="True" Margin="10" />
-                <Button x:Name="ReviewLogFilesButton" Click="ReviewLogFilesButton_Click" Content="Review Log Files" Width="120" Margin="0,0,0,10" />
+                <Button x:Name="ReviewLogFilesButton" Click="ReviewLogFilesButton_Click" Content="Watch All Logs" Width="120" Margin="0,0,0,10" />
+                <Button x:Name="RemoveLogFilesButton" Click="RemoveLogFilesButton_Click" Content="Remove Logs" Width="120" Margin="0,0,0,10" />
             </StackPanel>
         </GroupBox>
 
         <!-- TMS Data Management Section -->
         <GroupBox Header="TMS Data Management" Margin="10" Grid.Row="2">
             <StackPanel>
-
+                <TextBlock Text="Carrier Data:" />
                 <DataGrid x:Name="carrierDataGrid" AutoGenerateColumns="True" Margin="10" />
                 
                 <Button x:Name="SaveCarrierDataButton" Click="SaveCarrierDataButton_Click" Content="Save Changes" Width="180" Margin="0,0,0,5" />
 
-                <Button x:Name="ManageRouteTableButton" Content="Manage Route Table" Width="180" Margin="0,0,0,5" />
+                <TextBlock Text="Route Table:" />
+                
+                <DataGrid x:Name="RouteDataGrid" AutoGenerateColumns="True" Margin="10" />
+                <Button x:Name="ManageRouteTableButton" Click="ManageRouteTableButton_Click" Content="Save Changes" Width="180" Margin="0,0,0,5" />
             </StackPanel>
         </GroupBox>
 
@@ -64,4 +62,6 @@
         
 
     </Grid>
+
+    </ScrollViewer>
 </Page>

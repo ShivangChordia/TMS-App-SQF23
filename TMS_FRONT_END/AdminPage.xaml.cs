@@ -45,6 +45,19 @@ namespace TMS_Front_nd
                 {
                     MessageBox.Show("carrierDataGrid is not initialized.");
                 }
+
+                List<Route> routes = tMS_DB_Connect.Routes.ToList();
+
+
+                // Now you have a list of Carrier objects, you can use it to bind to the DataGrid
+                if (RouteDataGrid != null)
+                {
+                    RouteDataGrid.ItemsSource = routes;
+                }
+                else
+                {
+                    MessageBox.Show("RouteDataGrid is not initialized.");
+                }
             }
 
             catch (Exception ex)
@@ -66,11 +79,6 @@ namespace TMS_Front_nd
             {
                 MessageBox.Show("BackUp Failed");
             }
-
-        }
-
-        private void SaveCarrierDataButton_Click(object sender, RoutedEventArgs e)
-        {
 
         }
 
@@ -104,8 +112,13 @@ namespace TMS_Front_nd
 
         }
 
+        private void RemoveLogFilesButton_Click(object sender, RoutedEventArgs e)
+        {
+                    LogFileGrid.ItemsSource = null;
+        }
 
-        private void SaveChangesButton_Click(object sender, RoutedEventArgs e)
+
+        private void SaveCarrierDataButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -170,6 +183,41 @@ namespace TMS_Front_nd
                 }
             }
 
-        
+        private void ManageRouteTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                using (TMS_DB_Connect tmsDbContext = new TMS_DB_Connect())
+                {
+                    // Retrieve the modified Route objects from the DataGrid
+                    List<Route> modifiedRoutes = RouteDataGrid.ItemsSource.Cast<Route>().ToList();
+
+                    foreach (var modifiedRoute in modifiedRoutes)
+                    {
+                        var existingRoute = tmsDbContext.Routes.FirstOrDefault(c => c.RouteID == modifiedRoute.RouteID);
+                        if (existingRoute != null)
+                        {
+                            // Update the properties of the existing Route object with modified values
+                            existingRoute.RouteStartPoint = modifiedRoute.RouteStartPoint;
+                            existingRoute.RouteEndPoint = modifiedRoute.RouteEndPoint;
+                            existingRoute.RouteID = modifiedRoute.RouteID;
+                            existingRoute.TimeInHours = modifiedRoute.TimeInHours;
+                            existingRoute.TotalDistance = modifiedRoute.TotalDistance;
+                           
+                            // Update other properties as needed
+                        }
+                    }
+
+                    // Save changes back to the database
+                    tmsDbContext.SaveChanges();
+                    MessageBox.Show("Changes saved successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+        }
     }
 }

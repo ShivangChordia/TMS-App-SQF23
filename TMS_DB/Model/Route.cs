@@ -13,5 +13,14 @@ namespace TMS_DB.Model
     {
         [Key]
         public int RouteID { get; set; }
+
+        public string RouteStartPoint { get; set; }
+
+        public string RouteEndPoint { get; set; }
+
+        public int TotalDistance  { get; set; }
+
+        public float TimeInHours  { get; set; }
+
     }
 }

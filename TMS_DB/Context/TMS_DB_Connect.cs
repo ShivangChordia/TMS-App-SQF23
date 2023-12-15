@@ -288,6 +288,24 @@ namespace TMS_DB.Context
                 }
             
                 );
+
+
+            modelBuilder.Entity<Route>().HasData(
+                new Route { RouteID = 1, RouteStartPoint = "Windsor", RouteEndPoint = "London", TotalDistance = 191, TimeInHours = 2.5f },
+                        new Route { RouteID=2, RouteStartPoint = "London", RouteEndPoint = "Windsor", TotalDistance = 191, TimeInHours = 2.5f },
+                        new Route { RouteID=3, RouteStartPoint = "London", RouteEndPoint = "Hamilton", TotalDistance = 128, TimeInHours = 1.75f },
+                        new Route { RouteID=4, RouteStartPoint = "Hamilton", RouteEndPoint = "London", TotalDistance = 128, TimeInHours = 1.75f },
+                        new Route { RouteID=5, RouteStartPoint = "Hamilton", RouteEndPoint = "Toronto", TotalDistance = 68, TimeInHours = 1.25f },
+                        new Route { RouteID=6, RouteStartPoint = "Toronto", RouteEndPoint = "Hamilton", TotalDistance = 68, TimeInHours = 1.25f },
+                        new Route { RouteID=7, RouteStartPoint = "Toronto", RouteEndPoint = "Oshawa", TotalDistance = 60, TimeInHours = 1.3f },
+                        new Route { RouteID=8, RouteStartPoint = "Oshawa", RouteEndPoint = "Toronto", TotalDistance = 60, TimeInHours = 1.3f },
+                        new Route { RouteID=9, RouteStartPoint = "Oshawa", RouteEndPoint = "Belleville", TotalDistance = 134, TimeInHours = 1.65f },
+                        new Route { RouteID=10, RouteStartPoint = "Belleville", RouteEndPoint = "Oshawa", TotalDistance = 134, TimeInHours = 1.65f },
+                        new Route { RouteID=11, RouteStartPoint = "Belleville", RouteEndPoint = "Kingston", TotalDistance = 82, TimeInHours = 1.2f },
+                        new Route { RouteID=12, RouteStartPoint = "Kingston", RouteEndPoint = "Belleville", TotalDistance = 82, TimeInHours = 1.2f },
+                        new Route { RouteID=13,  RouteStartPoint = "Kingston", RouteEndPoint = "Ottawa", TotalDistance = 196, TimeInHours = 2.5f },
+                        new Route { RouteID=14,  RouteStartPoint = "Ottawa", RouteEndPoint = "Kingston", TotalDistance = 196, TimeInHours = 2.5f }
+            );
         }
 
 

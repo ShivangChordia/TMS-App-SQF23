@@ -519,9 +519,137 @@ namespace TMS_DB.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("RouteEndPoint")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RouteStartPoint")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<float>("TimeInHours")
+                        .HasColumnType("float");
+
+                    b.Property<int>("TotalDistance")
+                        .HasColumnType("int");
+
                     b.HasKey("RouteID");
 
                     b.ToTable("Route");
+
+                    b.HasData(
+                        new
+                        {
+                            RouteID = 1,
+                            RouteEndPoint = "London",
+                            RouteStartPoint = "Windsor",
+                            TimeInHours = 2.5f,
+                            TotalDistance = 191
+                        },
+                        new
+                        {
+                            RouteID = 2,
+                            RouteEndPoint = "Windsor",
+                            RouteStartPoint = "London",
+                            TimeInHours = 2.5f,
+                            TotalDistance = 191
+                        },
+                        new
+                        {
+                            RouteID = 3,
+                            RouteEndPoint = "Hamilton",
+                            RouteStartPoint = "London",
+                            TimeInHours = 1.75f,
+                            TotalDistance = 128
+                        },
+                        new
+                        {
+                            RouteID = 4,
+                            RouteEndPoint = "London",
+                            RouteStartPoint = "Hamilton",
+                            TimeInHours = 1.75f,
+                            TotalDistance = 128
+                        },
+                        new
+                        {
+                            RouteID = 5,
+                            RouteEndPoint = "Toronto",
+                            RouteStartPoint = "Hamilton",
+                            TimeInHours = 1.25f,
+                            TotalDistance = 68
+                        },
+                        new
+                        {
+                            RouteID = 6,
+                            RouteEndPoint = "Hamilton",
+                            RouteStartPoint = "Toronto",
+                            TimeInHours = 1.25f,
+                            TotalDistance = 68
+                        },
+                        new
+                        {
+                            RouteID = 7,
+                            RouteEndPoint = "Oshawa",
+                            RouteStartPoint = "Toronto",
+                            TimeInHours = 1.3f,
+                            TotalDistance = 60
+                        },
+                        new
+                        {
+                            RouteID = 8,
+                            RouteEndPoint = "Toronto",
+                            RouteStartPoint = "Oshawa",
+                            TimeInHours = 1.3f,
+                            TotalDistance = 60
+                        },
+                        new
+                        {
+                            RouteID = 9,
+                            RouteEndPoint = "Belleville",
+                            RouteStartPoint = "Oshawa",
+                            TimeInHours = 1.65f,
+                            TotalDistance = 134
+                        },
+                        new
+                        {
+                            RouteID = 10,
+                            RouteEndPoint = "Oshawa",
+                            RouteStartPoint = "Belleville",
+                            TimeInHours = 1.65f,
+                            TotalDistance = 134
+                        },
+                        new
+                        {
+                            RouteID = 11,
+                            RouteEndPoint = "Kingston",
+                            RouteStartPoint = "Belleville",
+                            TimeInHours = 1.2f,
+                            TotalDistance = 82
+                        },
+                        new
+                        {
+                            RouteID = 12,
+                            RouteEndPoint = "Belleville",
+                            RouteStartPoint = "Kingston",
+                            TimeInHours = 1.2f,
+                            TotalDistance = 82
+                        },
+                        new
+                        {
+                            RouteID = 13,
+                            RouteEndPoint = "Ottawa",
+                            RouteStartPoint = "Kingston",
+                            TimeInHours = 2.5f,
+                            TotalDistance = 196
+                        },
+                        new
+                        {
+                            RouteID = 14,
+                            RouteEndPoint = "Kingston",
+                            RouteStartPoint = "Ottawa",
+                            TimeInHours = 2.5f,
+                            TotalDistance = 196
+                        });
                 });
 
             modelBuilder.Entity("TMS_DB.Model.Trips", b =>
