@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace TMS_DB.Model
 {
@@ -27,5 +28,26 @@ namespace TMS_DB.Model
 
         [MaxLength(20)]
         public string AdminPhone { get; set; }
+
+        public static bool? login(string Username, string Password)
+        {
+            using var context = new TMS_DB.Context.TMS_DB_Connect();
+
+            if (Username != null && Password != null)
+            {
+                var login = context.Admins.FirstOrDefault(l => l.AdminName == Username);
+                if (login != null) {
+                    if (login.AdminPassword == Password){
+                        return true;
+                    }else { return false; }
+                }
+                else { return false; }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

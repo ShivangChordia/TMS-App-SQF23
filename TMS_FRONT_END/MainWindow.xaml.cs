@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TMS_DB.Context;
+using TMS_DB.Model;
+using TMS_Front_nd;
 
 namespace TMS_FRONT_END
 {
@@ -23,6 +26,20 @@ namespace TMS_FRONT_END
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += MyWindow_loaded;
+        }
+
+
+        /* Function:  private void MyWindow_loaded(object sender, RoutedEventArgs e)
+*  Parameters:  object sender, RoutedEventArgs e
+*  Description: This function contains the logic on loading of the window
+*/
+        private void MyWindow_loaded(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new login());
         }
     }
+
 }
+

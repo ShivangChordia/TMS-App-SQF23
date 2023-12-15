@@ -35,5 +35,104 @@ namespace TMS_DB.Context
             const string connectionString = "server=localhost;port=3306;database=TMS_DB;user=root;password=17039125Ss#";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Admin>().HasData(
+                 new Admin
+                 {
+                     AdminId = 1,
+                     AdminName = "Admin1",
+                     AdminPassword = "Password1",
+                     AdminDOB = new DateTime(1990, 1, 1),
+                     AdminEmail = "admin1@example.com",
+                     AdminPhone = "1234567890"
+                 },
+        new Admin
+        {
+            AdminId = 2,
+            AdminName = "Admin2",
+            AdminPassword = "Password2",
+            AdminDOB = new DateTime(1991, 2, 2),
+            AdminEmail = "admin2@example.com",
+            AdminPhone = "2345678901"
+        },
+        // Add more admins similarly...
+        new Admin
+        {
+            AdminId = 3,
+            AdminName = "Admin3",
+            AdminPassword = "Password3",
+            AdminDOB = new DateTime(1996, 7, 7),
+            AdminEmail = "admin3@example.com",
+            AdminPhone = "7890123456"
+        }
+    );
+
+            modelBuilder.Entity<Buyer>().HasData(
+                 new Buyer
+                 {
+                     BuyerId = 1,
+                     BuyerName = "Buyer1",
+                     BuyerPassword = "Password1",
+                     BuyerDOB = new DateTime(1990, 1, 1),
+                     BuyerEmail = "Buyer1@example.com",
+                     BuyerPhone = "1234567890"
+                 },
+        new Buyer
+        {
+          BuyerId = 2,
+            BuyerName = "Buyer2",
+            BuyerPassword = "Password2",
+            BuyerDOB = new DateTime(1991, 2, 2),
+            BuyerEmail = "Buyer2@example.com",
+            BuyerPhone = "2345678901"
+        },
+        // Add more Buyers similarly...
+        new Buyer
+        {
+            BuyerId = 3,
+            BuyerName = "Buyer3",
+            BuyerPassword = "Password3",
+            BuyerDOB = new DateTime(1996, 7, 7),
+            BuyerEmail = "Buyer3@example.com",
+            BuyerPhone = "7890123456"
+        }
+    );
+
+            modelBuilder.Entity<Planner>().HasData(
+                 new Planner
+                 {
+                     PlannerId = 1,
+                     PlannerName = "Planner1",
+                     PlannerPassword = "Password1",
+                     PlannerDOB = new DateTime(1990, 1, 1),
+                     PlannerEmail = "Planner1@example.com",
+                     PlannerPhone = "1234567890"
+                 },
+        new Planner
+        {
+            PlannerId = 2,
+            PlannerName = "Planner2",
+            PlannerPassword = "Password2",
+            PlannerDOB = new DateTime(1991, 2, 2),
+            PlannerEmail = "Planner2@example.com",
+            PlannerPhone = "2345678901"
+        },
+        // Add more Planners similarly...
+        new Planner
+        {
+            PlannerId = 3,
+            PlannerName = "Planner3",
+            PlannerPassword = "Password3",
+            PlannerDOB = new DateTime(1996, 7, 7),
+            PlannerEmail = "Planner3@example.com",
+            PlannerPhone = "7890123456"
+        }
+    );
+        }
     }
 }
