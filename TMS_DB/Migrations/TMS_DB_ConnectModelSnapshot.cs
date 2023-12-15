@@ -156,14 +156,174 @@ namespace TMS_DB.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("City")
+                    b.Property<string>("DepotCity")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<int>("FTLAvailability")
+                        .HasColumnType("int");
+
+                    b.Property<double>("FTLRate")
+                        .HasColumnType("double");
+
+                    b.Property<int>("LTLAvailability")
+                        .HasColumnType("int");
+
+                    b.Property<double>("LTLRate")
+                        .HasColumnType("double");
+
+                    b.Property<double>("ReefCharge")
+                        .HasColumnType("double");
+
                     b.HasKey("CarrierID");
 
                     b.ToTable("Carriers");
+
+                    b.HasData(
+                        new
+                        {
+                            CarrierID = 1,
+                            CarrierName = "Planet Express",
+                            DepotCity = "Windsor",
+                            FTLAvailability = 50,
+                            FTLRate = 5.21,
+                            LTLAvailability = 640,
+                            LTLRate = 0.36209999999999998,
+                            ReefCharge = 0.080000000000000002
+                        },
+                        new
+                        {
+                            CarrierID = 2,
+                            CarrierName = "Planet Express",
+                            DepotCity = "Hamilton",
+                            FTLAvailability = 50,
+                            FTLRate = 5.21,
+                            LTLAvailability = 640,
+                            LTLRate = 0.36209999999999998,
+                            ReefCharge = 0.080000000000000002
+                        },
+                        new
+                        {
+                            CarrierID = 3,
+                            CarrierName = "Planet Express",
+                            DepotCity = "Oshawa",
+                            FTLAvailability = 50,
+                            FTLRate = 5.21,
+                            LTLAvailability = 640,
+                            LTLRate = 0.36209999999999998,
+                            ReefCharge = 0.080000000000000002
+                        },
+                        new
+                        {
+                            CarrierID = 4,
+                            CarrierName = "Planet Express",
+                            DepotCity = "Belleville",
+                            FTLAvailability = 50,
+                            FTLRate = 5.21,
+                            LTLAvailability = 640,
+                            LTLRate = 0.36209999999999998,
+                            ReefCharge = 0.080000000000000002
+                        },
+                        new
+                        {
+                            CarrierID = 5,
+                            CarrierName = "Planet Express",
+                            DepotCity = "Ottawa",
+                            FTLAvailability = 50,
+                            FTLRate = 5.21,
+                            LTLAvailability = 640,
+                            LTLRate = 0.36209999999999998,
+                            ReefCharge = 0.080000000000000002
+                        },
+                        new
+                        {
+                            CarrierID = 6,
+                            CarrierName = "Schooner's",
+                            DepotCity = "London",
+                            FTLAvailability = 18,
+                            FTLRate = 5.0499999999999998,
+                            LTLAvailability = 98,
+                            LTLRate = 0.34339999999999998,
+                            ReefCharge = 0.070000000000000007
+                        },
+                        new
+                        {
+                            CarrierID = 7,
+                            CarrierName = "Schooner's",
+                            DepotCity = "Toronto",
+                            FTLAvailability = 18,
+                            FTLRate = 5.0499999999999998,
+                            LTLAvailability = 98,
+                            LTLRate = 0.34339999999999998,
+                            ReefCharge = 0.070000000000000007
+                        },
+                        new
+                        {
+                            CarrierID = 8,
+                            CarrierName = "Schooner's",
+                            DepotCity = "Kingston",
+                            FTLAvailability = 18,
+                            FTLRate = 5.0499999999999998,
+                            LTLAvailability = 98,
+                            LTLRate = 0.34339999999999998,
+                            ReefCharge = 0.070000000000000007
+                        },
+                        new
+                        {
+                            CarrierID = 9,
+                            CarrierName = "Tillman Transport",
+                            DepotCity = "Windsor",
+                            FTLAvailability = 24,
+                            FTLRate = 5.1100000000000003,
+                            LTLAvailability = 35,
+                            LTLRate = 0.30120000000000002,
+                            ReefCharge = 0.089999999999999997
+                        },
+                        new
+                        {
+                            CarrierID = 10,
+                            CarrierName = "Tillman Transport",
+                            DepotCity = "London",
+                            FTLAvailability = 18,
+                            FTLRate = 5.1100000000000003,
+                            LTLAvailability = 45,
+                            LTLRate = 0.30120000000000002,
+                            ReefCharge = 0.089999999999999997
+                        },
+                        new
+                        {
+                            CarrierID = 11,
+                            CarrierName = "Tillman Transport",
+                            DepotCity = "Hamilton",
+                            FTLAvailability = 18,
+                            FTLRate = 5.1100000000000003,
+                            LTLAvailability = 45,
+                            LTLRate = 0.30120000000000002,
+                            ReefCharge = 0.089999999999999997
+                        },
+                        new
+                        {
+                            CarrierID = 12,
+                            CarrierName = "We Haul",
+                            DepotCity = "Ottawa",
+                            FTLAvailability = 11,
+                            FTLRate = 5.2000000000000002,
+                            LTLAvailability = 0,
+                            LTLRate = 0.0,
+                            ReefCharge = 0.065000000000000002
+                        },
+                        new
+                        {
+                            CarrierID = 13,
+                            CarrierName = "We Haul",
+                            DepotCity = "Toronto",
+                            FTLAvailability = 11,
+                            FTLRate = 5.2000000000000002,
+                            LTLAvailability = 0,
+                            LTLRate = 0.0,
+                            ReefCharge = 0.065000000000000002
+                        });
                 });
 
             modelBuilder.Entity("TMS_DB.Model.ContractMarketplace", b =>

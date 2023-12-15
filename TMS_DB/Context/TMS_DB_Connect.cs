@@ -139,6 +139,177 @@ namespace TMS_DB.Context
             PlannerPhone = "7890123456"
         }
     );
+
+            modelBuilder.Entity<Carrier>().HasData(
+                 new Carrier
+                 {
+                     CarrierID = 1,
+                     CarrierName = "Planet Express",
+                     DepotCity = "Windsor",
+                     FTLAvailability = 50,
+                     LTLAvailability = 640,
+                     FTLRate = 5.21,
+                     LTLRate = 0.3621,
+                     ReefCharge = 0.08
+                 },
+                new Carrier
+                {
+                    CarrierID = 2,
+                    CarrierName = "Planet Express",
+                    DepotCity = "Hamilton",
+                    FTLAvailability = 50,
+                    LTLAvailability = 640,
+                    FTLRate = 5.21,
+                    LTLRate = 0.3621,
+                    ReefCharge = 0.08
+                },
+                new Carrier
+                {
+                    CarrierID = 3,
+                    CarrierName = "Planet Express",
+                    DepotCity = "Oshawa",
+                    FTLAvailability = 50,
+                    LTLAvailability = 640,
+                    FTLRate = 5.21,
+                    LTLRate = 0.3621,
+                    ReefCharge = 0.08
+                },
+                new Carrier
+                {
+
+                    CarrierID = 4,
+                    CarrierName = "Planet Express",
+                    DepotCity = "Belleville",
+                    FTLAvailability = 50,
+                    LTLAvailability = 640,
+                    FTLRate = 5.21,
+                    LTLRate = 0.3621,
+                    ReefCharge = 0.08
+                },
+                new Carrier
+                {
+
+                    CarrierID = 5,
+                    CarrierName = "Planet Express",
+                    DepotCity = "Ottawa",
+                    FTLAvailability = 50,
+                    LTLAvailability = 640,
+                    FTLRate = 5.21,
+                    LTLRate = 0.3621,
+                    ReefCharge = 0.08
+                },
+                new Carrier
+                {
+                    CarrierID = 6,
+                    CarrierName = "Schooner's",
+                    DepotCity = "London",
+                    FTLAvailability = 18,
+                    LTLAvailability = 98,
+                    FTLRate = 5.05,
+                    LTLRate = 0.3434,
+                    ReefCharge = 0.07
+                },
+                new Carrier
+                {
+                    CarrierID = 7,
+                    CarrierName = "Schooner's",
+                    DepotCity = "Toronto",
+                    FTLAvailability = 18,
+                    LTLAvailability = 98,
+                    FTLRate = 5.05,
+                    LTLRate = 0.3434,
+                    ReefCharge = 0.07
+                },
+                new Carrier
+                {
+                    CarrierID = 8,
+                    CarrierName = "Schooner's",
+                    DepotCity = "Kingston",
+                    FTLAvailability = 18,
+                    LTLAvailability = 98,
+                    FTLRate = 5.05,
+                    LTLRate = 0.3434,
+                    ReefCharge = 0.07
+                },
+                new Carrier
+                {
+                    CarrierID = 9,
+                    CarrierName = "Tillman Transport",
+                    DepotCity = "Windsor",
+                    FTLAvailability = 24,
+                    LTLAvailability = 35,
+                    FTLRate = 5.11,
+                    LTLRate = 0.3012,
+                    ReefCharge = 0.09
+                },
+                new Carrier
+                {
+                    CarrierID = 10,
+                    CarrierName = "Tillman Transport",
+                    DepotCity = "London",
+                    FTLAvailability = 18,
+                    LTLAvailability = 45,
+                    FTLRate = 5.11,
+                    LTLRate = 0.3012,
+                    ReefCharge = 0.09
+                },
+                new Carrier
+                {
+                    CarrierID = 11,
+                    CarrierName = "Tillman Transport",
+                    DepotCity = "Hamilton",
+                    FTLAvailability = 18,
+                    LTLAvailability = 45,
+                    FTLRate = 5.11,
+                    LTLRate = 0.3012,
+                    ReefCharge = 0.09
+                },
+                new Carrier
+                {
+                    CarrierID = 12,
+                    CarrierName = "We Haul",
+                    DepotCity = "Ottawa",
+                    FTLAvailability = 11,
+                    LTLAvailability = 0,
+                    FTLRate = 5.2,
+                    LTLRate = 0,
+                    ReefCharge = 0.065
+                },
+                new Carrier
+                {
+                    CarrierID = 13,
+                    CarrierName = "We Haul",
+                    DepotCity = "Toronto",
+                    FTLAvailability = 11,
+                    LTLAvailability = 0,
+                    FTLRate = 5.2,
+                    LTLRate = 0,
+                    ReefCharge = 0.065
+                }
+            
+                );
+        }
+
+
+        public void Log(string action, string description)
+        {
+            try
+            {
+                var logEntry = new LogEntry
+                {
+                    Timestamp = DateTime.Now,
+                    Action = action,
+                    Description = description
+                };
+
+                LogEntries.Add(logEntry);
+                SaveChanges(); // Save changes to the database
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions, such as logging to a file or displaying an error message
+                Console.WriteLine($"Error while logging: {ex.Message}");
+            }
         }
 
         public bool Backup(string path)

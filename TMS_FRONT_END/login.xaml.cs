@@ -35,6 +35,8 @@ namespace TMS_FRONT_END
             string enteredUsername = usernameTextBox.Text;
             string enteredPassword = passwordBox.Password;
 
+            TMS_DB_Connect tMS_DB_Connect = new TMS_DB_Connect();
+
             // Check credentials against the database
             bool isValidUser = CheckCredentials(enteredUsername, enteredPassword);
 
@@ -47,16 +49,20 @@ namespace TMS_FRONT_END
                 if (roleComboBox.Text == "Admin")
                 {
                     AdminPage adminPage = new AdminPage();
+                    tMS_DB_Connect.Log("INFO", "Admin Logged In");
                     NavigationService.Navigate(adminPage);
                 }
                 else if (roleComboBox.Text == "Buyer")
                 {
                     BuyerPage buyerPage = new BuyerPage();
+                    tMS_DB_Connect.Log("INFO", "Buyer Logged In");
                     NavigationService.Navigate(buyerPage);
+
                 }
                 else if (roleComboBox.Text == "Planner")
                 {
                     PlannerPage plannerPage = new PlannerPage();
+                    tMS_DB_Connect.Log("INFO", "Planner Logged In");
                     NavigationService.Navigate(plannerPage);
                 }
 

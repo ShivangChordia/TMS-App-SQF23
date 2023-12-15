@@ -18,7 +18,18 @@ namespace TMS_DB.Model
         [StringLength(100)]
         public string CarrierName { get; set; }
 
+        [Required]
         [StringLength(50)]
-        public string City { get; set; }
+        public string DepotCity { get; set; }
+
+        public int FTLAvailability { get; set; }
+
+        public int LTLAvailability { get; set; }
+
+        public double FTLRate { get; set; }
+
+        public double LTLRate { get; set; }
+
+        public double ReefCharge { get; set; }
     }
 }

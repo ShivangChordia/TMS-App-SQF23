@@ -19,9 +19,6 @@
         <!-- General Configuration Section -->
         <GroupBox Header="General Configuration" Margin="10">
             <StackPanel>
-                <TextBlock Text="Log File Directory:" />
-                <TextBox Name="LogFileDirectoryTextBox" Width="200" Margin="0,0,0,10" />
-
                 <TextBlock Text="DBMS IP Address:" />
                 <TextBox Name="DbmsIpAddressTextBox" Width="200" Margin="0,0,0,10" />
 
@@ -30,31 +27,41 @@
             </StackPanel>
         </GroupBox>
 
-
         <!-- Log File Review Section -->
         <GroupBox Header="Log File Review" Margin="10" Grid.Row="1">
-            <Button Content="Review Log Files" Width="120" Margin="0,0,0,10" />
-        </GroupBox>
+            <StackPanel>
+                <TextBlock Text="Log File Directory:" />
+                <TextBox Name="LogFileDirectoryTextBox" Width="200" Margin="0,0,0,10" />
 
+                <Button x:Name="PrintLogFilesButton" Click="PrintLogFilesButton_Click" Content="Review Log Files" Width="120" Margin="0,0,0,10" />
+                <DataGrid x:Name="LogFileGrid" AutoGenerateColumns="True" Margin="10" />
+                <Button x:Name="ReviewLogFilesButton" Click="ReviewLogFilesButton_Click" Content="Review Log Files" Width="120" Margin="0,0,0,10" />
+            </StackPanel>
+        </GroupBox>
 
         <!-- TMS Data Management Section -->
         <GroupBox Header="TMS Data Management" Margin="10" Grid.Row="2">
             <StackPanel>
-                <Button Content="Manage Rate/Fee Tables" Width="180" Margin="0,0,0,5" />
-                <Button Content="Manage Carrier Data" Width="180" Margin="0,0,0,5" />
-                <Button Content="Manage Route Table" Width="180" Margin="0,0,0,5" />
+
+                <DataGrid x:Name="carrierDataGrid" AutoGenerateColumns="True" Margin="10" />
+                
+                <Button x:Name="SaveCarrierDataButton" Click="SaveCarrierDataButton_Click" Content="Save Changes" Width="180" Margin="0,0,0,5" />
+
+                <Button x:Name="ManageRouteTableButton" Content="Manage Route Table" Width="180" Margin="0,0,0,5" />
             </StackPanel>
         </GroupBox>
 
-
-        <!-- Database Backup Section -->
+        <!-- Database Backup Section --> 
         <GroupBox Header="Database Backup" Margin="10" Grid.Row="3">
             <StackPanel>
                 <TextBlock Text="Backup Directory:" />
                 <TextBox Name="BackupDirectoryTextBox" Width="200" Margin="0,0,0,10" />
 
-                <Button Content="Initiate Backup" Width="120" Click="BackupButton_Click" />
+                <Button x:Name="InitiateBackupButton" Content="Initiate Backup" Width="120" Click="BackupButton_Click" />
             </StackPanel>
         </GroupBox>
+
+        
+
     </Grid>
 </Page>
