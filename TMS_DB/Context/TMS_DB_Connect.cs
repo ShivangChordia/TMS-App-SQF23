@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TMS_DB.Model;
+using System.Diagnostics;
+using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace TMS_DB.Context
 {
@@ -29,6 +32,9 @@ namespace TMS_DB.Context
         public DbSet<RateFee> RateFees { get; set; }
 
         public DbSet<Route> Routes { get; set; }
+
+        public DbSet<LogEntry> LogEntries { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -134,5 +140,38 @@ namespace TMS_DB.Context
         }
     );
         }
+
+        public bool Backup(string path)
+        {
+            try
+            {
+
+                string connectionString = "server=localhost;port=3306;database=TMS_DB;user=root;password=17039125Ss#";
+                string backupFileName = $"full_backup_{DateTime.Now:yyyyMMdd_HHmmss}.sql";
+                string backupPath = Path.Combine(path, backupFileName);
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        using (MySqlBackup mb = new MySqlBackup(cmd))
+                        {
+                            cmd.Connection = conn;
+                            conn.Open();
+
+                            mb.ExportToFile(backupPath);
+                        }
+                    }
+                }
+
+                return File.Exists(backupPath);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                return false;
+            }
+        }
     }
 }
+

@@ -28,9 +28,9 @@
                 <ComboBoxItem Content="Planner"/>
             </ComboBox>
             <TextBlock Text="Username" FontWeight="Bold"/>
-            <TextBox x:Name="usernameTextBox" Margin="0,5,0,10" Padding="8" BorderBrush="#999" BorderThickness="1"/>
+            <TextBox x:Name="usernameTextBox" Text="Admin1" Margin="0,5,0,10" Padding="8" BorderBrush="#999" BorderThickness="1"/>
             <TextBlock Text="Password" FontWeight="Bold"/>
-            <PasswordBox x:Name="passwordBox" Margin="0,5,0,20" Padding="8" BorderBrush="#999" BorderThickness="1"/>
+            <PasswordBox x:Name="passwordBox"  Margin="0,5,0,20" Padding="8" BorderBrush="#999" BorderThickness="1"/>
             <Button Content="Login" Padding="10" Background="#007acc" Foreground="White" FontSize="16" FontWeight="Bold" Click="LoginButton_Click"/>
         </StackPanel>
 

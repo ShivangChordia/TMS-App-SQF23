@@ -221,6 +221,29 @@ namespace TMS_DB.Migrations
                     b.ToTable("Customer");
                 });
 
+            modelBuilder.Entity("TMS_DB.Model.LogEntry", b =>
+                {
+                    b.Property<int>("LogId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasMaxLength(200)
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("LogId");
+
+                    b.ToTable("LogEntry");
+                });
+
             modelBuilder.Entity("TMS_DB.Model.Order", b =>
                 {
                     b.Property<int>("OrderID")
