@@ -12,12 +12,23 @@ namespace TMS_DB.Model
     public class ContractMarketplace
     {
         [Key]
-        public int MarketPlaceId { get; set; }
+        public int Id { get; set; } // Assuming you have an ID field in the table
+
+        [MaxLength(255)]
+        public string ClientName { get; set; }
 
         [MaxLength(100)]
-        public string MarketPlaceName { get; set; }
+        public string JobType { get; set; }
+
+        public int Quantity { get; set; }
+
+        [MaxLength(100)]
+        public string Origin { get; set; }
+
+        [MaxLength(100)]
+        public string Destination { get; set; }
 
         [MaxLength(50)]
-        public string MarketPlaceCode { get; set; }
+        public string VanType { get; set; }
     }
 }

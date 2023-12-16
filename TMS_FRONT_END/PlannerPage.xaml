@@ -9,6 +9,31 @@
       Title="PlannerPage">
 
     <Grid>
-        
+        <Grid Background="AntiqueWhite">
+            <StackPanel Margin="20">
+                <TextBlock Text="Planner Dashboard" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+                <!-- Planner-specific controls -->
+                <StackPanel>
+                    <TextBlock Text="Order Management" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <!-- Controls for managing orders -->
+                    <Button Content="Receive Orders" Margin="0,0,0,5"/>
+                    <Button Content="Assign Carriers" Margin="0,0,0,5"/>
+                    <Button Content="Simulate Time" Margin="0,0,0,5"/>
+                    <Button Content="Generate Reports" Margin="0,0,0,5"/>
+                    <!-- Add more controls as needed -->
+                </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0,20,0,0">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Order Status" FontWeight="Bold" FontSize="16" Margin="0,0,0,5"/>
+                        <!-- Display order status information -->
+                        <ListBox>
+                            <ListBoxItem>Order:</ListBoxItem>
+                           
+                            <!-- Add dynamic order status items here -->
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

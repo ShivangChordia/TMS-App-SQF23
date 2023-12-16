@@ -7,42 +7,31 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BuyerPage">
-
-    <Grid>
-        <!-- Header Section -->
-        <StackPanel Margin="10">
-            <TextBlock Text="Contract Management" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-            <!-- Various controls for user authentication, navigation, etc., can be added here -->
+    <Grid Background="AntiqueWhite">
+        <StackPanel>
+            <TextBlock Text="Buyer Dashboard" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+            <!-- Buyer-specific controls -->
+            <StackPanel>
+                <TextBlock Text="Contract Marketplace" FontWeight="Bold" Margin="0,0,0,5"/>
+                <!-- Controls for interacting with contract marketplace -->
+                <Button Content="View Contracts" Click="Contract_Click" Margin="0,0,0,5"/>
+                <DataGrid x:Name="contractDataGrid" AutoGenerateColumns="True" Margin="10" />
+                <Button Content="Manage Customers" Margin="0,0,0,5"/>
+                <Button Content="Create New Order" Margin="0,0,0,5"/>
+                <!-- Add more controls as needed -->
+            </StackPanel>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0,20,0,0">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Order Summary" FontWeight="Bold" FontSize="16" Margin="0,0,0,5"/>
+                    <!-- Display order summary information -->
+                    <ListBox>
+                        <ListBoxItem>
+                            <TextBlock>Order:</TextBlock>
+                        </ListBoxItem>
+                        <!-- Add dynamic order items here -->
+                    </ListBox>
+                </StackPanel>
+            </Border>
         </StackPanel>
-
-        <!-- Main Content Grid -->
-        <Grid Margin="10,80,10,10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <!-- Contract Management Section -->
-            <StackPanel Grid.Row="0">
-                <TextBlock Text="Contracts from Marketplace" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-                <!-- Controls for receiving contracts, accepting new customers, initiating orders -->
-                <!-- Buttons, dropdowns, etc., for interacting with contracts -->
-            </StackPanel>
-
-            <!-- Order Management Section -->
-            <StackPanel Grid.Row="1" Margin="0,20,0,20">
-                <TextBlock Text="Order Management" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-                <!-- Controls for selecting cities, reviewing and processing orders -->
-                <!-- Buttons, dropdowns, etc., for managing orders -->
-            </StackPanel>
-
-            <!-- Invoice Generation Section -->
-            <StackPanel Grid.Row="2">
-                <TextBlock Text="Invoice Generation" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-                <!-- Controls for generating invoices, displaying billing details -->
-                <!-- Buttons, textboxes, etc., for invoice generation -->
-            </StackPanel>
-        </Grid>
     </Grid>
 </Page>

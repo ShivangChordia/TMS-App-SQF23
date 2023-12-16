@@ -219,5 +219,45 @@ namespace TMS_Front_nd
             }
 
         }
+
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            InitializeComponent();
+
+            try
+            {
+                List<Carrier> carriers = tMS_DB_Connect.Carriers.ToList();
+
+
+                // Now you have a list of Carrier objects, you can use it to bind to the DataGrid
+                if (carrierDataGrid != null)
+                {
+                    carrierDataGrid.ItemsSource = carriers;
+                }
+                else
+                {
+                    MessageBox.Show("carrierDataGrid is not initialized.");
+                }
+
+                List<Route> routes = tMS_DB_Connect.Routes.ToList();
+
+
+                // Now you have a list of Carrier objects, you can use it to bind to the DataGrid
+                if (RouteDataGrid != null)
+                {
+                    RouteDataGrid.ItemsSource = routes;
+                }
+                else
+                {
+                    MessageBox.Show("RouteDataGrid is not initialized.");
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
     }
 }
